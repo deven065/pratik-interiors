@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
+/* Custom CSS Variables for Pratik Gupta Interiors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAFAF8;
+  --foreground: #2F2F2F;
+  --accent: #D4AF37;
+  --charcoal: #2F2F2F;
+  --off-white: #FAFAF8;
+  --gold: #D4AF37;
 }
 
 @theme inline {
+  /* Brand Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent: var(--accent);
+  --color-charcoal: var(--charcoal);
+  --color-off-white: var(--off-white);
+  --color-gold: var(--gold);
+  
+  /* Typography */
+  --font-sans: var(--font-playfair);
+  --font-serif: var(--font-playfair);
+  --font-body: var(--font-inter);
+  
+  /* Spacing */
+  --spacing-section: 6rem;
+  --container-max: 1280px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--charcoal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
 }
