@@ -20,19 +20,32 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   // Support multiple thumbnails with auto-carousel
   const thumbnails = Array.isArray(project.thumbnail) ? project.thumbnail : [project.thumbnail];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-rotate images if multiple thumbnails
+  // Auto-rotate images if multiple thumbnails (pause on hover)
   useEffect(() => {
-    if (thumbnails.length > 1) {
+    if (thumbnails.length > 1 && !isPaused) {
       const interval = setInterval(() => {
         setCurrentImageIndex((prev) => (prev + 1) % thumbnails.length);
       }, 3000); // Change image every 3 seconds
 
       return () => clearInterval(interval);
     }
-  }, [thumbnails.length]);
+  }, [thumbnails.length, isPaused]);
 
   const currentImage = thumbnails[currentImageIndex];
+
+  // Navigate to previous image
+  const handlePrevious = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentImageIndex((prev) => (prev - 1 + thumbnails.length) % thumbnails.length);
+  };
+
+  // Navigate to next image
+  const handleNext = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentImageIndex((prev) => (prev + 1) % thumbnails.length);
+  };
 
   return (
     <motion.div
@@ -48,6 +61,8 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       <Link
         href={`/projects/${project.slug}`}
         className="group block relative overflow-hidden bg-charcoal/5"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
       >
         {/* Image Container */}
         <div className="relative aspect-[4/3] overflow-hidden">
@@ -69,6 +84,61 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
               />
             </motion.div>
           </AnimatePresence>
+
+          {/* Hover Navigation Areas (for multiple thumbnails) */}
+          {thumbnails.length > 1 && (
+            <>
+              {/* Left side - Previous */}
+              <div
+                className="absolute left-0 top-0 bottom-0 w-1/3 z-20 cursor-pointer opacity-0 hover:opacity-100 transition-opacity group/prev"
+                onMouseEnter={handlePrevious}
+                onClick={handlePrevious}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-charcoal/40 to-transparent flex items-center justify-start pl-4">
+                  <div className="w-10 h-10 rounded-full bg-off-white/20 backdrop-blur-sm flex items-center justify-center group-hover/prev:bg-off-white/30 transition-colors">
+                    <svg
+                      className="w-6 h-6 text-off-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right side - Next */}
+              <div
+                className="absolute right-0 top-0 bottom-0 w-1/3 z-20 cursor-pointer opacity-0 hover:opacity-100 transition-opacity group/next"
+                onMouseEnter={handleNext}
+                onClick={handleNext}
+              >
+                <div className="absolute inset-0 bg-gradient-to-l from-charcoal/40 to-transparent flex items-center justify-end pr-4">
+                  <div className="w-10 h-10 rounded-full bg-off-white/20 backdrop-blur-sm flex items-center justify-center group-hover/next:bg-off-white/30 transition-colors">
+                    <svg
+                      className="w-6 h-6 text-off-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
           
           {/* Image indicators for multiple thumbnails */}
           {thumbnails.length > 1 && (
