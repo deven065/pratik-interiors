@@ -166,7 +166,7 @@ export default function AboutPage() {
             </p>
             <div className="space-y-4 text-charcoal/70 leading-relaxed mb-8">
               <p>
-                With over 15 years of experience in luxury interior design, Pratik Gupta has established himself as a visionary in the field. His work has been featured in leading design publications and has earned recognition at national and international design awards.
+                With over 5+ years of experience in luxury interior design, Pratik Gupta has established himself as a visionary in the field. His work has been featured in leading design publications and has earned recognition at national and international design awards.
               </p>
               <p>
                 Educated at the prestigious National Institute of Design, Pratik combines technical expertise with an artistic sensibility that has become the studio's signature. His approach is deeply rooted in understanding the cultural context, environmental considerations, and personal narratives of each project.
@@ -191,7 +191,7 @@ export default function AboutPage() {
           <FadeIn direction="right" className="order-1 lg:order-2">
             <div className="relative aspect-[3/4] bg-charcoal/10">
               <Image
-                src="/images/about/pratik-gupta.jpg"
+                src="/images/about/pratik-gupta.png"
                 alt="Pratik Gupta - Founder"
                 fill
                 className="object-cover"
