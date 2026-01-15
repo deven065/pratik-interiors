@@ -76,27 +76,41 @@ export const projects: Project[] = [
     category: 'Hospitality',
     shortDescription: 'A coastal retreat blending traditional charm with contemporary comfort',
     description: 'This boutique hotel in Goa captures the essence of coastal living while offering modern luxury. The design incorporates local materials, natural textures, and a warm color palette that complements the tropical surroundings.',
-    thumbnail: {
-      url: '/images/projects/hotel-goa/thumbnail.jpg',
-      alt: 'Boutique Hotel Goa Lobby',
-      width: 1200,
-      height: 800,
-    },
+    thumbnail: [
+      {
+        url: '/images/projects/hotel-goa/thumbnail.avif',
+        alt: 'Boutique Hotel Goa Lobby',
+        width: 1200,
+        height: 800,
+      },
+      {
+        url: '/images/projects/hotel-goa/thumbnail-2.avif',
+        alt: 'Boutique Hotel Goa Exterior',
+        width: 1200,
+        height: 800,
+      },
+      {
+        url: '/images/projects/hotel-goa/thumbnail-3.avif',
+        alt: 'Boutique Hotel Goa Suite',
+        width: 1200,
+        height: 800,
+      },
+    ],
     gallery: [
       {
-        url: '/images/projects/hotel-goa/gallery-1.jpg',
+        url: '/images/projects/hotel-goa/thumbnail.avif',
         alt: 'Hotel Lobby',
         width: 1920,
         height: 1080,
       },
       {
-        url: '/images/projects/hotel-goa/gallery-2.jpg',
+        url: '/images/projects/hotel-goa/thumbnail-2.avif',
         alt: 'Hotel Suite',
         width: 1920,
         height: 1080,
       },
       {
-        url: '/images/projects/hotel-goa/gallery-3.jpg',
+        url: '/images/projects/hotel-goa/thumbnail-3.avif',
         alt: 'Hotel Restaurant',
         width: 1920,
         height: 1080,
