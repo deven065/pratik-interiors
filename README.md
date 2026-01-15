@@ -192,7 +192,7 @@ Private project for Pratik Gupta Interiors.
 
 **Pratik Gupta Interiors**
 - Email: hello@pratikguptainteriors.com
-- Phone: +91 98765 43210
+- Phone: +91 99878 73629
 - Location: Mumbai, India
 
 ---

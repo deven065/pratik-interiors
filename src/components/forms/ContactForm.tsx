@@ -103,7 +103,7 @@ export function ContactForm() {
             'w-full px-4 py-3 border-2 bg-off-white transition-colors focus:outline-none focus:border-gold',
             errors.phone ? 'border-red-500' : 'border-charcoal/20'
           )}
-          placeholder="+91 98765 43210"
+          placeholder="+91 99878 73629"
         />
         {errors.phone && (
           <p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>

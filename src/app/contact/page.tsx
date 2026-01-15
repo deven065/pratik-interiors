@@ -69,10 +69,10 @@ export default function ContactPage() {
                       Phone
                     </p>
                     <a
-                      href="tel:+919876543210"
+                      href="tel:+919987873629"
                       className="text-charcoal hover:text-gold transition-colors"
                     >
-                      +91 98765 43210
+                      +91 99878 73629
                     </a>
                   </div>
                   <div>
@@ -80,12 +80,12 @@ export default function ContactPage() {
                       WhatsApp
                     </p>
                     <a
-                      href="https://wa.me/919876543210"
+                      href="https://wa.me/919987873629"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-charcoal hover:text-gold transition-colors"
                     >
-                      +91 98765 43210
+                      +91 99878 73629
                     </a>
                   </div>
                 </div>
