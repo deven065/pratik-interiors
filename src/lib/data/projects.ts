@@ -16,12 +16,26 @@ export const projects: Project[] = [
     category: 'Residential',
     shortDescription: 'A modern penthouse with panoramic city views and minimalist elegance',
     description: 'This luxury penthouse in Mumbai showcases contemporary design with a focus on open spaces, natural light, and premium materials. The design seamlessly blends functionality with aesthetic appeal, creating a sophisticated urban sanctuary.',
-    thumbnail: {
-      url: '/images/projects/penthouse/thumbnail.jpg',
-      alt: 'Luxury Penthouse Living Room',
-      width: 1200,
-      height: 800,
-    },
+    thumbnail: [
+      {
+        url: '/images/projects/penthouse/thumbnail.jpg',
+        alt: 'Luxury Penthouse Living Room',
+        width: 1200,
+        height: 800,
+      },
+      {
+        url: '/images/projects/penthouse/gallery-1.jpg',
+        alt: 'Penthouse Living Room View',
+        width: 1200,
+        height: 800,
+      },
+      {
+        url: '/images/projects/penthouse/gallery-2.jpg',
+        alt: 'Penthouse Bedroom',
+        width: 1200,
+        height: 800,
+      },
+    ],
     gallery: [
       {
         url: '/images/projects/penthouse/gallery-1.jpg',

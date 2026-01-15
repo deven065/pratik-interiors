@@ -25,6 +25,12 @@ Images are identified by their **filename**, not extension.
 - `gallery-1.png` ✓
 - `gallery-2.webp` ✓
 
+**Multiple Thumbnails (NEW!):**
+You can now use multiple images for project thumbnails! They will auto-rotate in a carousel:
+- `thumbnail.jpg` ← First image
+- `thumbnail-2.jpg` ← Second image (optional)
+- `thumbnail-3.png` ← Third image (optional, any format!)
+
 **Just make sure the base filename matches** (thumbnail, gallery-1, gallery-2, etc.) and you're all set!
 
 ## Folder Structure
@@ -38,8 +44,10 @@ public/images/
 │   └── pratik-gupta.[any format] # Founder portrait (800x1067, <200KB)
 └── projects/
     ├── penthouse/
-    │   ├── thumbnail.[any format]     # Grid thumbnail (1200x800, <150KB)
-    │   ├── gallery-1.[any format]     # Detail page image (1920x1080, <300KB)
+    │   ├── thumbnail.[any format]      # Primary thumbnail (1200x800, <150KB)
+    │   ├── thumbnail-2.[any format]    # 2nd thumbnail - optional carousel (1200x800)
+    │   ├── thumbnail-3.[any format]    # 3rd thumbnail - optional carousel (1200x800)
+    │   ├── gallery-1.[any format]      # Detail page image (1920x1080, <300KB)
     │   ├── gallery-2.[any format]
     │   ├── gallery-3.[any format]
     │   └── gallery-4.[any format]

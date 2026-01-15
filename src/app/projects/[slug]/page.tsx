@@ -40,7 +40,11 @@ export async function generateMetadata({
     openGraph: {
       title: project.title,
       description: project.shortDescription,
-      images: [project.thumbnail.url],
+      images: [
+        Array.isArray(project.thumbnail) 
+          ? project.thumbnail[0].url 
+          : project.thumbnail.url
+      ],
     },
   };
 }

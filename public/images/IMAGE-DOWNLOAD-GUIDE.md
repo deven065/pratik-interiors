@@ -17,13 +17,16 @@ public/images/
 │   └── hero-main.[jpg|png|webp] (any format - fallback for video)
 ├── projects/
 │   ├── penthouse/
-│   │   ├── thumbnail.[jpg|png|webp|etc]
+│   │   ├── thumbnail.[jpg|png|webp|etc]       # Primary thumbnail
+│   │   ├── thumbnail-2.[jpg|png|webp|etc]     # Optional 2nd thumbnail for carousel
+│   │   ├── thumbnail-3.[jpg|png|webp|etc]     # Optional 3rd thumbnail for carousel
 │   │   ├── gallery-1.[jpg|png|webp|etc]
 │   │   ├── gallery-2.[jpg|png|webp|etc]
 │   │   ├── gallery-3.[jpg|png|webp|etc]
 │   │   └── gallery-4.[jpg|png|webp|etc]
 │   ├── hotel-goa/
 │   │   ├── thumbnail.[any format]
+│   │   ├── thumbnail-2.[any format]          # Optional
 │   │   ├── gallery-1.[any format]
 │   │   ├── gallery-2.[any format]
 │   │   └── gallery-3.[any format]
@@ -66,11 +69,16 @@ public/images/
 
 **Category**: Residential | **Style**: Modern, Minimalist, Luxury
 
-### Thumbnail (1200x800)
+### Thumbnail (1200x800) - Now supports MULTIPLE images!
 **Search**: "luxury penthouse living room modern minimalist"
 **Links**:
 - https://www.pexels.com/search/luxury%20penthouse/
 - https://unsplash.com/s/photos/luxury-apartment
+
+**Download 1-3 images for auto-carousel:**
+- `thumbnail.jpg` - Main image (bright, open living room with city views)
+- `thumbnail-2.jpg` - Optional 2nd image (different angle/room)
+- `thumbnail-3.png` - Optional 3rd image (any format!)
 
 **Look for**: Bright, open living room with city views, neutral colors, modern furniture
 
@@ -296,6 +304,7 @@ public/images/
 - **Format**: JPG, PNG, WEBP, or AVIF (any format works!)
 - **Quality**: High (80-90%)
 - **File Size**: < 300KB
+- **Multiple Images**: Add thumbnail-2, thumbnail-3, etc. for auto-carousel effect!
 
 ### Gallery Images
 - **Size**: 1920x1080px
@@ -344,11 +353,12 @@ public/images/
 After downloading all images, verify:
 
 - [ ] All 8 project folders created
-- [ ] Each project has a thumbnail image (any format: thumbnail.jpg, thumbnail.png, thumbnail.webp, etc.)
+- [ ] Each project has at least 1 thumbnail image (thumbnail.jpg, .png, .webp, etc.)
+- [ ] Optional: Projects can have 2-3 thumbnails for carousel (thumbnail-2, thumbnail-3)
 - [ ] Each project has all gallery images (3-4 per project, any format)
 - [ ] Hero image added to hero/ folder (any format)
 - [ ] All images are landscape orientation
-- [ ] File names match the expected pattern (thumbnail, gallery-1, gallery-2, etc.) with any extension
+- [ ] File names match the expected pattern with any extension
 - [ ] Images are optimized (< 500KB each)
 - [ ] No watermarks or copyright notices
 

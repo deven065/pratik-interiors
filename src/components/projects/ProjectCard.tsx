@@ -1,9 +1,10 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Project } from '@/types';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Project, ProjectImage } from '@/types';
 
 /**
  * ProjectCard Component
@@ -16,6 +17,23 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+  // Support multiple thumbnails with auto-carousel
+  const thumbnails = Array.isArray(project.thumbnail) ? project.thumbnail : [project.thumbnail];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-rotate images if multiple thumbnails
+  useEffect(() => {
+    if (thumbnails.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % thumbnails.length);
+      }, 3000); // Change image every 3 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [thumbnails.length]);
+
+  const currentImage = thumbnails[currentImageIndex];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -33,13 +51,40 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       >
         {/* Image Container */}
         <div className="relative aspect-[4/3] overflow-hidden">
-          <Image
-            src={project.thumbnail.url}
-            alt={project.thumbnail.alt}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentImageIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={currentImage.url}
+                alt={currentImage.alt}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </motion.div>
+          </AnimatePresence>
+          
+          {/* Image indicators for multiple thumbnails */}
+          {thumbnails.length > 1 && (
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+              {thumbnails.map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                    idx === currentImageIndex
+                      ? 'bg-gold w-6'
+                      : 'bg-off-white/50'
+                  }`}
+                />
+              ))}
+            </div>
+          )}
           
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />

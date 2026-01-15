@@ -19,7 +19,7 @@ export interface Project {
   category: ProjectCategory;
   description: string;
   shortDescription: string;
-  thumbnail: ProjectImage;
+  thumbnail: ProjectImage | ProjectImage[]; // Support single or multiple thumbnail images
   gallery: ProjectImage[];
   location?: string;
   year?: string;
