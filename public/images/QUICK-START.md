@@ -1,6 +1,8 @@
 # 🚀 QUICK START: Download Images in 30 Minutes
 
-## ⚡ Fast Track Process
+## ⚡ Fast Track Process - ANY IMAGE FORMAT WORKS!
+
+**Important:** You can use JPG, PNG, WEBP, or any format. Just match the filename (thumbnail, gallery-1, etc.)
 
 ### Step 1: Open Pexels (Best Source)
 🔗 https://www.pexels.com/
@@ -11,34 +13,34 @@
 
 ### 1️⃣ HERO IMAGE (Most Important)
 **Folder**: `public/images/hero/`
-**File Name**: `hero-main.jpg`
+**File Name**: `hero-main` + any extension (.jpg, .png, .webp, etc.)
 
 **Direct Link**: https://www.pexels.com/search/luxury%20interior%20design/
 - Click any stunning luxury interior image
 - Download "Original" or "Large" size
-- Save as `hero-main.jpg` in `hero/` folder
+- Save as `hero-main.jpg` (or .png, .webp - any format!) in `hero/` folder
 
 ---
 
 ### 2️⃣ PROJECT 1: Luxury Penthouse Mumbai
 **Folder**: `public/images/projects/penthouse/`
 
-**Download 4 images**:
+**Download 4 images** (any format - .jpg, .png, .webp all work!):
 
-1. **thumbnail.jpg**
+1. **thumbnail** (.jpg/.png/.webp - your choice!)
    - Search: https://www.pexels.com/search/luxury%20penthouse%20living%20room/
    - Pick: Modern living room with city views
    
-2. **gallery-1.jpg**
+2. **gallery-1** (any format)
    - Search: https://www.pexels.com/search/modern%20luxury%20living%20room/
    
-3. **gallery-2.jpg**
+3. **gallery-2** (any format)
    - Search: https://www.pexels.com/search/luxury%20bedroom%20minimalist/
    
-4. **gallery-3.jpg**
+4. **gallery-3** (any format)
    - Search: https://www.pexels.com/search/modern%20kitchen%20luxury/
    
-5. **gallery-4.jpg**
+5. **gallery-4** (any format)
    - Search: https://www.pexels.com/search/luxury%20dining%20room/
 
 ---
@@ -46,7 +48,7 @@
 ### 3️⃣ PROJECT 2: Boutique Hotel Goa
 **Folder**: `public/images/projects/hotel-goa/`
 
-**Download 3 images**:
+**Download 3 images** (use any format you like!):
 
 1. **thumbnail.jpg**
    - Search: https://www.pexels.com/search/hotel%20lobby%20tropical/

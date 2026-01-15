@@ -3,6 +3,9 @@ import { Project } from '@/types';
 /**
  * Sample Project Data for Pratik Gupta Interiors
  * Replace with real data or connect to CMS later
+ * 
+ * Note: Image paths are flexible and support multiple formats (jpg, jpeg, png, webp, etc.)
+ * The system will automatically use whatever format you provide
  */
 
 export const projects: Project[] = [

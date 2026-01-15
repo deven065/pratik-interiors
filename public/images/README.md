@@ -2,22 +2,47 @@
 
 This folder contains all image assets for the Pratik Gupta Interiors website.
 
+## 🎯 Flexible Image Format Support
+
+**Great News!** This website supports **ALL common image formats**:
+- ✅ JPG / JPEG
+- ✅ PNG  
+- ✅ WEBP
+- ✅ AVIF
+- ✅ GIF
+
+You can use **any format** for any image. Mix and match as needed!
+
+### Naming Convention
+
+Images are identified by their **filename**, not extension.
+
+**Examples (all valid):**
+- `thumbnail.jpg` ✓
+- `thumbnail.png` ✓
+- `thumbnail.webp` ✓
+- `gallery-1.jpg` ✓
+- `gallery-1.png` ✓
+- `gallery-2.webp` ✓
+
+**Just make sure the base filename matches** (thumbnail, gallery-1, gallery-2, etc.) and you're all set!
+
 ## Folder Structure
 
 ```
 public/images/
 ├── hero/
-│   └── hero-main.jpg         # Homepage hero background (1920x1080, <500KB)
+│   └── hero-main.[any format]    # Homepage hero background (1920x1080, <500KB)
 ├── about/
-│   ├── studio.jpg            # Studio/office image (1200x900, <300KB)
-│   └── pratik-gupta.jpg      # Founder portrait (800x1067, <200KB)
+│   ├── studio.[any format]       # Studio/office image (1200x900, <300KB)
+│   └── pratik-gupta.[any format] # Founder portrait (800x1067, <200KB)
 └── projects/
     ├── penthouse/
-    │   ├── thumbnail.jpg     # Grid thumbnail (1200x800, <150KB)
-    │   ├── gallery-1.jpg     # Detail page image (1920x1080, <300KB)
-    │   ├── gallery-2.jpg
-    │   ├── gallery-3.jpg
-    │   └── gallery-4.jpg
+    │   ├── thumbnail.[any format]     # Grid thumbnail (1200x800, <150KB)
+    │   ├── gallery-1.[any format]     # Detail page image (1920x1080, <300KB)
+    │   ├── gallery-2.[any format]
+    │   ├── gallery-3.[any format]
+    │   └── gallery-4.[any format]
     ├── hotel-goa/
     ├── office-bangalore/
     ├── villa-pune/

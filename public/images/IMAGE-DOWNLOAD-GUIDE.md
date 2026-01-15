@@ -14,19 +14,19 @@
 ```
 public/images/
 ├── hero/
-│   └── hero-main.jpg (fallback for video)
+│   └── hero-main.[jpg|png|webp] (any format - fallback for video)
 ├── projects/
 │   ├── penthouse/
-│   │   ├── thumbnail.jpg
-│   │   ├── gallery-1.jpg
-│   │   ├── gallery-2.jpg
-│   │   ├── gallery-3.jpg
-│   │   └── gallery-4.jpg
+│   │   ├── thumbnail.[jpg|png|webp|etc]
+│   │   ├── gallery-1.[jpg|png|webp|etc]
+│   │   ├── gallery-2.[jpg|png|webp|etc]
+│   │   ├── gallery-3.[jpg|png|webp|etc]
+│   │   └── gallery-4.[jpg|png|webp|etc]
 │   ├── hotel-goa/
-│   │   ├── thumbnail.jpg
-│   │   ├── gallery-1.jpg
-│   │   ├── gallery-2.jpg
-│   │   └── gallery-3.jpg
+│   │   ├── thumbnail.[any format]
+│   │   ├── gallery-1.[any format]
+│   │   ├── gallery-2.[any format]
+│   │   └── gallery-3.[any format]
 │   ├── office-bangalore/
 │   │   ├── thumbnail.jpg
 │   │   ├── gallery-1.jpg
@@ -293,16 +293,18 @@ public/images/
 ### Thumbnails
 - **Size**: 1200x800px
 - **Aspect Ratio**: 3:2
-- **Format**: JPG
+- **Format**: JPG, PNG, WEBP, or AVIF (any format works!)
 - **Quality**: High (80-90%)
 - **File Size**: < 300KB
 
 ### Gallery Images
 - **Size**: 1920x1080px
 - **Aspect Ratio**: 16:9
-- **Format**: JPG
+- **Format**: JPG, PNG, WEBP, or AVIF (any format works!)
 - **Quality**: High (85-95%)
 - **File Size**: < 500KB
+
+**Note:** The website automatically supports ALL common image formats. You can mix and match formats - use whatever works best for each image!
 
 ---
 
@@ -316,8 +318,8 @@ public/images/
    - Orientation: Landscape
    - Size: Large (1920px+)
    - License: Free to use
-4. **Download** the image in the highest resolution
-5. **Rename** exactly as specified (e.g., `thumbnail.jpg`, `gallery-1.jpg`)
+4. **Download** the image in the highest resolution and any format (JPG, PNG, WEBP - all work!)
+5. **Rename** with the correct name (e.g., `thumbnail`, `gallery-1`) - keep original extension or change it
 6. **Place** in the correct project folder
 
 ---
@@ -330,10 +332,10 @@ public/images/
 - **Compressor.io**: https://compressor.io/ (Fast bulk)
 
 ### Settings:
-- Format: JPG (not PNG for photos)
+- Format: JPG, PNG, or WEBP (any format works - use what looks best!)
 - Quality: 85% for gallery, 80% for thumbnails
 - Strip metadata: Yes
-- Progressive: Yes
+- Progressive: Yes (if available)
 
 ---
 
@@ -342,11 +344,11 @@ public/images/
 After downloading all images, verify:
 
 - [ ] All 8 project folders created
-- [ ] Each project has thumbnail.jpg
-- [ ] Each project has all gallery images (3-4 per project)
-- [ ] Hero image added to hero/ folder
+- [ ] Each project has a thumbnail image (any format: thumbnail.jpg, thumbnail.png, thumbnail.webp, etc.)
+- [ ] Each project has all gallery images (3-4 per project, any format)
+- [ ] Hero image added to hero/ folder (any format)
 - [ ] All images are landscape orientation
-- [ ] File names match exactly (lowercase, hyphens)
+- [ ] File names match the expected pattern (thumbnail, gallery-1, gallery-2, etc.) with any extension
 - [ ] Images are optimized (< 500KB each)
 - [ ] No watermarks or copyright notices
 
