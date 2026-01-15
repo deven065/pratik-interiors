@@ -207,7 +207,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <FadeIn delay={0}>
             <div className="text-center p-8 bg-off-white border border-charcoal/10">
-              <p className="text-5xl font-serif font-bold text-gold mb-2">10+</p>
+              <p className="text-5xl font-serif font-bold text-gold mb-2">5+</p>
               <p className="text-charcoal/70 text-sm uppercase tracking-wide">
                 Years Experience
               </p>

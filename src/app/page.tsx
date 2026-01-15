@@ -117,7 +117,7 @@ export default function HomePage() {
             <FadeIn direction="right" className="space-y-6">
               <div className="grid grid-cols-2 gap-6">
                 <div className="p-6 bg-off-white/5 border border-off-white/10">
-                  <p className="text-4xl font-serif font-bold text-gold mb-2">10+</p>
+                  <p className="text-4xl font-serif font-bold text-gold mb-2">5+</p>
                   <p className="text-off-white/70 text-sm uppercase tracking-wide">
                     Years Experience
                   </p>
