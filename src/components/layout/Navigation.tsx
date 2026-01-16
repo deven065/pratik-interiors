@@ -67,7 +67,7 @@ export function Navigation() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           isScrolled
-            ? 'bg-off-white/95 backdrop-blur-sm shadow-sm py-4'
+            ? 'bg-off-white/98 backdrop-blur-xl shadow-lg py-4 border-b border-charcoal/5'
             : 'bg-transparent py-6',
           isVisible
             ? 'translate-y-0 opacity-100'
@@ -78,19 +78,19 @@ export function Navigation() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-serif font-bold text-charcoal hover:text-gold transition-colors"
+            className="text-2xl font-serif font-bold bg-gradient-to-r from-charcoal to-charcoal/80 bg-clip-text text-transparent hover:from-gold hover:to-[#F4D03F] transition-all duration-500"
           >
             Pratik Gupta
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   className={cn(
-                    'text-sm uppercase tracking-wider font-medium transition-colors relative group',
+                    'text-sm uppercase tracking-[0.15em] font-semibold transition-all duration-300 relative group py-2',
                     pathname === link.href
                       ? 'text-gold'
                       : 'text-charcoal hover:text-gold'
@@ -99,7 +99,7 @@ export function Navigation() {
                   {link.label}
                   <span
                     className={cn(
-                      'absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300',
+                      'absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-gold to-[#F4D03F] transition-all duration-300',
                       pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
                     )}
                   />

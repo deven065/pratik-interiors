@@ -60,7 +60,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
     >
       <Link
         href={`/projects/${project.slug}`}
-        className="group block relative overflow-hidden bg-charcoal/5"
+        className="group block relative overflow-hidden bg-charcoal/5 shadow-lg hover:shadow-2xl transition-shadow duration-500"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -157,33 +157,36 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           )}
           
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-500" />
           
           {/* Category Badge */}
-          <div className="absolute top-4 right-4 px-3 py-1 bg-gold/90 backdrop-blur-sm text-charcoal text-xs font-semibold uppercase tracking-wider">
+          <div className="absolute top-4 right-4 px-4 py-1.5 bg-gradient-to-r from-gold to-[#F4D03F] text-charcoal text-xs font-bold uppercase tracking-[0.15em] shadow-lg">
             {project.category}
           </div>
         </div>
 
         {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 text-off-white transform transition-transform duration-300 group-hover:-translate-y-2">
-          <h3 className="text-2xl font-serif font-bold mb-2 group-hover:text-gold transition-colors">
+        <div className="absolute bottom-0 left-0 right-0 p-8 text-off-white transform transition-all duration-500 group-hover:-translate-y-3">
+          <h3 className="text-2xl md:text-3xl font-serif font-bold mb-3 group-hover:text-gold transition-colors duration-300 tracking-tight leading-tight">
             {project.title}
           </h3>
-          <p className="text-sm text-off-white/80 line-clamp-2 mb-2">
+          <p className="text-sm text-off-white/85 line-clamp-2 mb-3 font-light tracking-wide leading-relaxed">
             {project.shortDescription}
           </p>
           {project.location && (
-            <p className="text-xs text-off-white/60 uppercase tracking-wide">
+            <p className="text-xs text-off-white/70 uppercase tracking-[0.15em] font-medium flex items-center gap-2">
+              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
               {project.location}
             </p>
           )}
         </div>
 
         {/* Hover Arrow */}
-        <div className="absolute bottom-6 right-6 w-10 h-10 rounded-full border-2 border-gold flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+        <div className="absolute bottom-8 right-8 w-12 h-12 rounded-full bg-gradient-to-br from-gold to-[#F4D03F] flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-x-6 group-hover:translate-x-0 transition-all duration-500 shadow-xl">
           <svg
-            className="w-5 h-5 text-gold"
+            className="w-6 h-6 text-charcoal"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -191,7 +194,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
+              strokeWidth={2.5}
               d="M9 5l7 7-7 7"
             />
           </svg>

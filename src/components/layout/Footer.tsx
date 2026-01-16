@@ -9,15 +9,18 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal text-off-white">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <footer className="relative bg-gradient-to-br from-charcoal via-charcoal to-[#1a1a1a] text-off-white border-t border-gold/10">
+      {/* Decorative top border */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+      
+      <div className="container mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {/* Brand Section */}
           <div>
-            <h3 className="text-2xl font-serif font-bold text-gold mb-4">
+            <h3 className="text-3xl font-serif font-bold bg-gradient-to-r from-gold to-[#F4D03F] bg-clip-text text-transparent mb-5">
               Pratik Gupta Interiors
             </h3>
-            <p className="text-off-white/80 text-sm leading-relaxed">
+            <p className="text-off-white/85 text-sm leading-relaxed font-light tracking-wide">
               Creating timeless spaces that inspire and elevate everyday living.
               Luxury interior design services across India.
             </p>
@@ -25,37 +28,41 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="text-lg font-semibold mb-6 tracking-wide">Quick Links</h4>
+            <ul className="space-y-3">
               <li>
                 <Link
                   href="/"
-                  className="text-off-white/80 hover:text-gold transition-colors text-sm"
+                  className="group text-off-white/80 hover:text-gold transition-colors text-sm flex items-center gap-2"
                 >
+                  <span className="w-0 group-hover:w-4 h-[1px] bg-gold transition-all duration-300"></span>
                   Home
                 </Link>
               </li>
               <li>
                 <Link
                   href="/projects"
-                  className="text-off-white/80 hover:text-gold transition-colors text-sm"
+                  className="group text-off-white/80 hover:text-gold transition-colors text-sm flex items-center gap-2"
                 >
+                  <span className="w-0 group-hover:w-4 h-[1px] bg-gold transition-all duration-300"></span>
                   Projects
                 </Link>
               </li>
               <li>
                 <Link
                   href="/about"
-                  className="text-off-white/80 hover:text-gold transition-colors text-sm"
+                  className="group text-off-white/80 hover:text-gold transition-colors text-sm flex items-center gap-2"
                 >
+                  <span className="w-0 group-hover:w-4 h-[1px] bg-gold transition-all duration-300"></span>
                   About
                 </Link>
               </li>
               <li>
                 <Link
                   href="/contact"
-                  className="text-off-white/80 hover:text-gold transition-colors text-sm"
+                  className="group text-off-white/80 hover:text-gold transition-colors text-sm flex items-center gap-2"
                 >
+                  <span className="w-0 group-hover:w-4 h-[1px] bg-gold transition-all duration-300"></span>
                   Contact
                 </Link>
               </li>
@@ -64,19 +71,19 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Get in Touch</h4>
-            <ul className="space-y-3">
+            <h4 className="text-lg font-semibold mb-6 tracking-wide">Get in Touch</h4>
+            <ul className="space-y-4">
               <li className="text-off-white/80 text-sm">
-                <span className="block font-medium text-off-white">Email</span>
+                <span className="block font-semibold text-off-white mb-1 text-xs uppercase tracking-wider text-gold/90">Email</span>
                 <a
                   href="mailto:hello@pratikguptainteriors.com"
-                  className="hover:text-gold transition-colors"
+                  className="hover:text-gold transition-colors font-light"
                 >
                   hello@pratikguptainteriors.com
                 </a>
               </li>
               <li className="text-off-white/80 text-sm">
-                <span className="block font-medium text-off-white">Phone</span>
+                <span className="block font-semibold text-off-white mb-1 text-xs uppercase tracking-wider text-gold/90">Phone</span>
                 <a
                   href="tel:+919987873629"
                   className="hover:text-gold transition-colors"

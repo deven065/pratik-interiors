@@ -132,9 +132,9 @@ export function Hero({
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-off-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-off-white mb-8 leading-[1.1] tracking-tight">
               {title}
             </h1>
           </motion.div>
@@ -142,23 +142,58 @@ export function Hero({
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <p className="text-xl md:text-2xl lg:text-3xl text-off-white/90 mb-12 font-light tracking-wide">
-              {subtitle}
-            </p>
+            <div className="relative inline-block">
+              <p className="text-xl md:text-2xl lg:text-3xl text-off-white/95 mb-16 font-light tracking-wide">
+                {subtitle}
+              </p>
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+            </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 1, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <Link
               href={ctaLink}
-              className="inline-block px-8 py-4 bg-gold text-charcoal font-semibold tracking-wider uppercase text-sm hover:bg-gold/90 transition-all duration-300 hover:scale-105"
+              className="group relative inline-block px-12 py-5 bg-gradient-to-r from-gold to-[#F4D03F] text-charcoal font-bold tracking-widest uppercase text-sm overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-gold/30"
             >
-              {ctaText}
+              <span className="relative z-10 flex items-center gap-3">
+                {ctaText}
+                <svg
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-charcoal transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              <span className="absolute inset-0 flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 font-bold tracking-widest uppercase text-sm">
+                {ctaText}
+                <svg
+                  className="w-5 h-5 ml-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
             </Link>
           </motion.div>
         </div>

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Custom CSS Variables for Pratik Gupta Interiors */
+/* Premium Custom CSS Variables */
 :root {
   --background: #FAFAF8;
   --foreground: #2F2F2F;
@@ -8,6 +8,16 @@
   --charcoal: #2F2F2F;
   --off-white: #FAFAF8;
   --gold: #D4AF37;
+  
+  /* Premium shadows */
+  --shadow-sm: 0 2px 8px rgba(47, 47, 47, 0.04);
+  --shadow-md: 0 4px 16px rgba(47, 47, 47, 0.08);
+  --shadow-lg: 0 8px 32px rgba(47, 47, 47, 0.12);
+  --shadow-xl: 0 16px 48px rgba(47, 47, 47, 0.16);
+  
+  /* Premium gradients */
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+  --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2F2F2F 100%);
 }
 
 @theme inline {
@@ -33,16 +43,40 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
+/* Premium Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-/* Custom scrollbar for webkit browsers */
+p {
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+/* Smooth scroll behavior with reduced motion support */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Premium selection color */
+::selection {
+  background-color: var(--gold);
+  color: var(--charcoal);
+}
+
+/* Custom scrollbar for webkit browsers - Premium style */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -50,12 +84,13 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--charcoal);
-  border-radius: 4px;
+  background: linear-gradient(180deg, var(--charcoal) 0%, var(--gold) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--off-white);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold);
+  background: var(--gradient-gold);
 }
 
 /* Hide video controls and overlays */
@@ -81,4 +116,58 @@ video::-webkit-media-controls-start-playback-button {
 
 video::-internal-media-controls-overlay-cast-button {
   display: none !important;
+}
+
+/* Premium link hover effects */
+a {
+  transition: all 0.3s ease;
+}
+
+/* Premium focus styles */
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, textarea, select {
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Premium backdrop blur utilities */
+.backdrop-premium {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Loading animation for images */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.loading-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(
+    90deg,
+    rgba(250, 250, 248, 0.1) 0%,
+    rgba(212, 175, 55, 0.2) 50%,
+    rgba(250, 250, 248, 0.1) 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* Premium card shadows on hover */
+.card-premium {
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.card-premium:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
 }
