@@ -19,18 +19,33 @@ const navLinks = [
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
-  // Handle scroll effect
+  // Handle scroll effect and visibility
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrollPosition = window.scrollY;
+      const heroHeight = window.innerHeight; // Full viewport height
+      
+      setIsScrolled(scrollPosition > 20);
+      
+      // Show header after scrolling past hero section (only on homepage)
+      if (isHomePage) {
+        setIsVisible(scrollPosition > heroHeight - 100);
+      } else {
+        setIsVisible(true);
+      }
     };
+
+    // Initial check
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -50,10 +65,13 @@ export function Navigation() {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           isScrolled
             ? 'bg-off-white/95 backdrop-blur-sm shadow-sm py-4'
-            : 'bg-transparent py-6'
+            : 'bg-transparent py-6',
+          isVisible
+            ? 'translate-y-0 opacity-100'
+            : '-translate-y-full opacity-0'
         )}
       >
         <nav className="container mx-auto px-6 flex items-center justify-between">
