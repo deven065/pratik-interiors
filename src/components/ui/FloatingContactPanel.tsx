@@ -10,7 +10,7 @@ export function FloatingContactPanel() {
   const togglePanel = () => setIsOpen(!isOpen);
 
   return (
-    <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50">
+    <div className="hidden md:block fixed left-0 top-1/2 -translate-y-1/2 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div
