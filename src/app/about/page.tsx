@@ -53,7 +53,7 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-charcoal/70 leading-relaxed">
               <p>
-                Founded in 2015, Pratik Gupta Interiors has grown from a passionate vision into one of India's most respected interior design studios. What began as a commitment to transforming residential spaces has evolved into a comprehensive design practice serving clients across residential, commercial, and hospitality sectors.
+                Founded in 2020, Pratik Gupta Interiors has grown from a passionate vision into one of India's most respected interior design studios. What began as a commitment to transforming residential spaces has evolved into a comprehensive design practice serving clients across residential, commercial, and hospitality sectors.
               </p>
               <p>
                 Our journey has been guided by a simple yet powerful belief: exceptional design has the power to transform not just spaces, but lives. Every project we undertake is an opportunity to create environments that inspire, comfort, and elevate the human experience.

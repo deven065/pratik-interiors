@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingContactPanel } from "@/components/ui/FloatingContactPanel";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={`${playfair.variable} ${inter.variable} antialiased`}
       >
         <Navigation />
+        <FloatingContactPanel />
         <main>{children}</main>
         <Footer />
       </body>
