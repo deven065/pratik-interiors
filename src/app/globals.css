@@ -57,3 +57,28 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gold);
 }
+
+/* Hide video controls and overlays */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+video::-internal-media-controls-overlay-cast-button {
+  display: none !important;
+}

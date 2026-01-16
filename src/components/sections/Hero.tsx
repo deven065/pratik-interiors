@@ -90,6 +90,9 @@ export function Hero({
               onError={() => setVideoError(true)}
               className="absolute inset-0 w-full h-full object-cover opacity-50"
               poster={backgroundImage}
+              controlsList="nodownload nofullscreen noremoteplayback"
+              disablePictureInPicture
+              style={{ pointerEvents: 'none' }}
             >
               <source src={backgroundVideo} type="video/mp4" />
               Your browser does not support the video tag.
